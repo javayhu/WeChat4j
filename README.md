@@ -15,7 +15,7 @@ WeChat4j 是为腾讯微信公众平台制作的一个Java版本的SDK，旨在�
 5.简单高效的资源管理<br>
 6.基于正则表达式的消息匹配<br>
 
-更多内容请看：http://hujiaweiyinger.diandian.com/post/2013-05-24/project_wechat4j
+更多内容请看：http://hujiaweiyinger.diandian.com/post/2013-05-24/project_wechat4j<br>
 《WeChat4j指南》是我制作的一个介绍如何使用WeChat4j的源码的文档，使用前请务必仔细阅读，下载地址：<br>
 https://www.dropbox.com/s/sf73g47e6qesqaa/wechat4j.pdf
 
