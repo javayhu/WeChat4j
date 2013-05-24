@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE appengine-web-app PUBLIC "-//BAIDU//BDT//EN" "http://bs.baidu.com/cloud-develop-toolkits/appengine-web.dtd">
+<appengine-web-app>
+	<application>appidbe9e630w0s</application>
+	<version>1</version>
+	<access_key></access_key>
+	<secure_key></secure_key>
+	<local_sql_host></local_sql_host>
+	<local_sql_port></local_sql_port>
+	<local_sql_user></local_sql_user>
+	<local_sql_password></local_sql_password>
+	<save_emulation_data>false</save_emulation_data>
+<sandbox>true</sandbox></appengine-web-app>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<du-web-app xmlns="http://bae.baidu.com/java/1.0">
+
+	<!-- Configure java.util.logging -->
+	<!-- <system-properties> <property name="test.com" value="haha,test" /> 
+		</system-properties> <static-files> <include expiration="access 1 months" 
+		path="/**.html" /> </static-files> -->
+
+</du-web-app>

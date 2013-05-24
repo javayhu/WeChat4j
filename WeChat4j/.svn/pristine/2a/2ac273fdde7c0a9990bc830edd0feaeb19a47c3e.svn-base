@@ -1,0 +1,184 @@
+package com.qq.weixin.sdk;
+
+import java.io.IOException;
+import java.util.Arrays;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.apache.commons.codec.digest.DigestUtils;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import com.qq.weixin.sdk.message.IMessage;
+import com.qq.weixin.sdk.message.Message;
+import com.qq.weixin.sdk.message.MessageEvent;
+import com.qq.weixin.sdk.message.MessageImage;
+import com.qq.weixin.sdk.message.MessageLink;
+import com.qq.weixin.sdk.message.MessageLocation;
+import com.qq.weixin.sdk.message.MessageText;
+import com.qq.weixin.sdk.message.handler.MessageHandlerEvent;
+import com.qq.weixin.sdk.message.handler.MessageHandlerHelper;
+import com.qq.weixin.sdk.message.handler.MessageHandlerImage;
+import com.qq.weixin.sdk.message.handler.MessageHandlerLink;
+import com.qq.weixin.sdk.message.handler.MessageHandlerLocation;
+import com.qq.weixin.sdk.message.handler.MessageHandlerText;
+import com.qq.weixin.sdk.message.result.handler.MessageResultHandlerHelper;
+import com.qq.weixin.sdk.message.result.handler.MessageResultHandlerMusic;
+import com.qq.weixin.sdk.message.result.handler.MessageResultHandlerNews;
+import com.qq.weixin.sdk.message.result.handler.MessageResultHandlerText;
+
+/**
+ * weixin tool class
+ * 
+ * @author hujiawei
+ * 
+ */
+public class WeixinUtil implements IMessage {
+
+	// private Logger logger = Logger.getLogger("weixin");//
+	private HttpServletRequest request;// request
+	private Message message;// message comes from
+	private HttpServletResponse response;// response
+	private Message messageResult;// message will return
+	private MessageHandlerHelper messageHadler;// handle message
+	private MessageResultHandlerHelper messageResultHandler;// handle result message
+
+	private static final String TOKEN = "WeChat4j";
+
+	// deal the message from user
+	public void dealMessage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		this.request = request;
+		this.response = response;
+		String echostr = request.getParameter("echostr");
+		String signature = request.getParameter("signature");
+		String nonce = request.getParameter("nonce");
+		String timestamp = request.getParameter("timestamp");
+		if (signature != null && checkSignature(signature, timestamp, nonce)) {// message is from weixin server
+			if (echostr != null) {// when get! when post, echostr is null or if(echostr != null)
+				response.setContentType("text/plain");
+				response.getWriter().write(echostr);
+			} else {// do post
+				response.setContentType("text/xml;charset=UTF-8");// important! otherwise error text encoding
+				try {
+					parseInputStreamToMessage();// parse message occurs a exception
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				messageResult = messageHadler.handleMessage(message);
+				writeMessageToOuputStream();
+			}
+		}
+		// else {//not from weixin
+		// do nothing
+		// }
+	}
+
+	// write the result message
+	private void writeMessageToOuputStream() throws IOException {
+		if (messageResult.getMsgType().equalsIgnoreCase(MESSAGE_RESULT_TEXT)) {
+			messageResultHandler = new MessageResultHandlerText();
+		} else if (messageResult.getMsgType().equalsIgnoreCase(MESSAGE_RESULT_NEWS)) {
+			messageResultHandler = new MessageResultHandlerNews();
+		} else if (messageResult.getMsgType().equalsIgnoreCase(MESSAGE_RESULT_MUSIC)) {
+			messageResultHandler = new MessageResultHandlerMusic();
+		}
+		String resultContent = messageResultHandler.buildMessageResult(messageResult);
+		// String resultContent = ResourceManager.getValue("result");
+		// logger.log(Level.INFO, resultContent);// log the result message on bae//
+		response.getWriter().print(resultContent);
+	}
+
+	// parse the message content to Message
+	private void parseInputStreamToMessage() throws Exception {
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		Document document = factory.newDocumentBuilder().parse(request.getInputStream());
+		Element root = document.getDocumentElement();
+		String type = (root.getElementsByTagName(TAG_MSGTYPE)).item(0).getTextContent();// filter CDATA... -- text/image/...
+		if (type.equalsIgnoreCase(MESSAGE_TEXT)) {// put it first,because most of time is text
+			message = new MessageText();
+			messageHadler = new MessageHandlerText();
+		} else if (type.equalsIgnoreCase(MESSAGE_EVENT)) {// do subscribe event
+			message = new MessageEvent();
+			messageHadler = new MessageHandlerEvent();
+		} else if (type.equalsIgnoreCase(MESSAGE_IMAGE)) {
+			message = new MessageImage();
+			messageHadler = new MessageHandlerImage();
+		} else if (type.equalsIgnoreCase(MESSAGE_LINK)) {
+			message = new MessageLink();
+			messageHadler = new MessageHandlerLink();
+		} else if (type.equalsIgnoreCase(MESSAGE_LOCATION)) {
+			message = new MessageLocation();
+			messageHadler = new MessageHandlerLocation();
+		}
+		messageHadler.parseMessage(message, root);// do the default/common parse!
+	}
+
+	// check signature
+	// signature=29ba6d9ea244e799091f8525ca8d1ee480f2a583&echostr=5877301187008054751&timestamp=1368966622&nonce=1368415815
+	public boolean checkSignature(String signature, String timestamp, String nonce) {
+		// dictionary sort
+		String[] dataStrings = new String[] { TOKEN, timestamp, nonce };
+		Arrays.sort(dataStrings);
+		// construct the three string
+		String data = dataStrings[0] + dataStrings[1] + dataStrings[2];
+		// sha1
+		String flag = DigestUtils.shaHex(data);
+		// check
+		if (flag.equalsIgnoreCase(signature)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public HttpServletRequest getRequest() {
+		return request;
+	}
+
+	public void setRequest(HttpServletRequest request) {
+		this.request = request;
+	}
+
+	public HttpServletResponse getResponse() {
+		return response;
+	}
+
+	public void setResponse(HttpServletResponse response) {
+		this.response = response;
+	}
+
+	public Message getMessage() {
+		return message;
+	}
+
+	public void setMessage(Message message) {
+		this.message = message;
+	}
+
+	public MessageHandlerHelper getMessageHadler() {
+		return messageHadler;
+	}
+
+	public void setMessageHadler(MessageHandlerHelper messageHadler) {
+		this.messageHadler = messageHadler;
+	}
+
+	public Message getMessageResult() {
+		return messageResult;
+	}
+
+	public void setMessageResult(Message messageResult) {
+		this.messageResult = messageResult;
+	}
+
+	public MessageResultHandlerHelper getMessageResultHandler() {
+		return messageResultHandler;
+	}
+
+	public void setMessageResultHandler(MessageResultHandlerHelper messageResultHandler) {
+		this.messageResultHandler = messageResultHandler;
+	}
+
+}
