@@ -1,0 +1,283 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #005F9E url(images/bg01.jpg) repeat left top;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #A6CAE4;
+}
+
+h1, h2, h3 {
+	margin: 0px;
+	text-transform: lowercase;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+h1 {
+	letter-spacing: -2px;
+	font-size: 36px;
+}
+
+h2 {
+	letter-spacing: -1px;
+	font-size: 22px;
+}
+
+h3 {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+p, ul, ol {
+	margin: 0px 0px 20px 0px;
+	text-align: justify;
+	line-height: 140%;
+}
+
+ul, ol {
+}
+
+a {
+	color: #AFDA3B;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.color1 {
+	color: #D6EE72;
+}
+
+.color2 {
+	color: #9DC9E8;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	margin: 0px auto;
+}
+
+img.alignleft {
+	margin-right: 25px;
+}
+
+img.alignright {
+	margin-left: 25px;
+}
+
+a img, img {
+	border: 3px solid #FFFFFF;
+}
+
+.two-columns {
+}
+
+.two-columns .column-one {
+	float: left;
+	width: 206px;
+}
+
+.two-columns .column-two {
+	float: right;
+	width: 206px;
+}
+
+.list1 {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+.list1 li {
+	margin: 0px 0px 2px 0px;
+	padding: 5px 10px;
+	background: url(images/homepage06.jpg) repeat left top;
+}
+
+.list1 li.alt {
+	background-image: url(images/homepage07.jpg);
+}
+
+.list1 a {
+	color: #FFFFFF;
+}
+
+.list2 {
+	margin-left: 0px;
+	padding-left: 0px;
+	list-style: none;
+}
+
+.list2 li {
+	padding: 5px 0px;
+	background: url(images/homepage08.gif) repeat-x left top;
+}
+
+.list2 li.first {
+	padding-top: 0px;
+	background: none;
+}
+
+/* Wrapper */
+
+#wrapper, #bg1, #bg2 {
+	height: 1000px;
+	min-height: 1000px;
+}
+
+html>body #wrapper, html>body #bg1, html>body #bg2 {
+	height: auto;
+}
+
+#wrapper {
+	background: url(images/bg02.jpg) repeat-x left top;
+}
+
+#bg1 {
+	background: url(images/bg03.jpg) repeat-y center top;
+}
+
+#bg2 {
+	background: url(images/bg04.jpg) no-repeat center top;
+}
+
+/* Header */
+
+#header {
+	width: 680px;
+	height: 180px;
+	margin: 0px auto;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	width: 260px;
+	background: url(images/homepage01.gif) repeat-x left bottom;
+}
+
+#logo h1 {
+	padding: 100px 0px 15px 0px;
+	text-transform: lowercase;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* Menu */
+
+#menu {
+	float: right;
+	background: url(images/homepage01.gif) repeat-x left bottom;
+}
+
+#menu ul {
+	margin: 0px -13px 0px 0px;
+	padding: 118px 0px 16px 30px;
+	list-style: none;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu a {
+	padding: 0px 13px 0px 16px;
+	background: url(images/homepage03.gif) no-repeat left center;
+	text-decoration: none;
+	text-transform: lowercase;
+	letter-spacing: -1px;
+	font-size: 18px;
+}
+
+#menu a:hover {
+	color: #9DC9E8;
+}
+
+#menu .first a {
+	background: none;
+}
+
+#menu .current_page_item a {
+	color: #FFFFFF;
+}
+
+/* Page */
+
+#page {
+	width: 680px;
+	margin: 0px auto;
+}
+
+/* Content */
+
+#content {
+	float: left;
+	width: 440px;
+}
+
+.post {
+}
+
+.post .title {
+	margin: 0px 0px 20px 0px;
+	padding: 0px 0px 10px 0px;
+	background: url(images/homepage02.gif) repeat-x left bottom;
+}
+
+.post .entry {
+}
+
+.post .meta {
+	padding: 10px 0px;
+	background: url(images/homepage08.gif) repeat-x left top;
+}
+
+.post .meta p {
+	margin: 0px;
+	line-height: normal;
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: right;
+	width: 212px;
+}
+
+/* Footer */
+
+#footer {
+	padding-top: 20px;
+	background: url(images/homepage01.gif) repeat-x left top;
+}
+
+#footer p {
+	margin: 0px;
+	padding: 0px;
+	line-height: normal;
+	text-align: center;
+}
