@@ -3,6 +3,7 @@ package com.qq.weixin.sdk;
 import java.io.IOException;
 import java.util.Arrays;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -69,10 +70,14 @@ public class WeixinUtil implements IMessage {
 				messageResult = messageHadler.handleMessage(message);
 				writeMessageToOuputStream();
 			}
+		} else {// not from weixin
+			// do nothing
+			try {
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+			} catch (ServletException e) {
+				e.printStackTrace();
+			}
 		}
-		// else {//not from weixin
-		// do nothing
-		// }
 	}
 
 	// write the result message
