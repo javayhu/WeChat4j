@@ -21,8 +21,7 @@
 				<div id="header">
 					<div id="logo">
 						<h1>
-							<a href="http://hujiaweiyinger.diandian.com"><span
-								class="color1">WeChat4j</span></a>
+							<a href="http://hujiaweiyinger.diandian.com">Hello, WeChat4j</a>
 						</h1>
 					</div>
 					<!-- end #logo -->
@@ -49,37 +48,32 @@
 							</p>
 							<p>
 								WeChat4j is an Open Source Java SDK for WeChat Open Platform.<br>
-									WeChat4j 是为腾讯微信公众平台制作的一个Java版本的SDK，旨在快速建立开发模式的微信公众账号。<br>
-										目前WeChat4j处于1.0版本，功能基本完善，但因为微信公众平台当前暂停了通用接口和自定义会话界面菜单的申请资格，
-										所以暂时不支持媒体上传和自定义菜单，待微信功能恢复之后WeChat4j会提供的，敬请期待。<br> 主要功能：<br>
-												1.一站式微信请求处理<br> 2.微信请求的算法验证<br> 3.所有消息类型的封装<br>
-															4.责任链模式的消息处理<br> 5.简单高效的资源管理<br> 6.基于正则表达式的消息匹配<br>
+								WeChat4j 是为腾讯微信公众平台制作的一个Java版本的SDK，旨在快速建立开发模式的微信公众账号。<br>
+								目前WeChat4j处于1.0版本，功能基本完善，但因为微信公众平台当前暂停了通用接口和自定义会话界面菜单的申请资格，
+								所以暂时不支持媒体上传和自定义菜单，待微信功能恢复之后WeChat4j会提供的，敬请期待。<br> 主要功能：<br>
+								1.一站式微信请求处理<br> 2.微信请求的算法验证<br> 3.所有消息类型的封装<br>
+								4.责任链模式的消息处理<br> 5.简单高效的资源管理<br> 6.基于正则表达式的消息匹配<br>
 
-																		更多内容请看：<a
-																		href="http://hujiaweiyinger.diandian.com/post/2013-05-24/project_wechat4j">http://hujiaweiyinger.diandian.com/post/2013-05-24/project_wechat4j</a><br>
-																			《WeChat4j指南》是我制作的一个介绍如何使用WeChat4j的源码的文档，使用前请务必仔细阅读，下载地址：<br>
-																				<a
-																				href="https://www.dropbox.com/s/sf73g47e6qesqaa/wechat4j.pdf">https://www.dropbox.com/s/sf73g47e6qesqaa/wechat4j.pdf</a><br>
+								更多内容请看：<a
+									href="http://hujiaweiyinger.diandian.com/post/2013-05-24/project_wechat4j">http://hujiaweiyinger.diandian.com/post/2013-05-24/project_wechat4j</a><br>
+								《WeChat4j指南》是我制作的一个介绍如何使用WeChat4j的源码的文档，使用前请务必仔细阅读，下载地址：<br>
+								<a href="https://www.dropbox.com/s/sf73g47e6qesqaa/wechat4j.pdf">https://www.dropbox.com/s/sf73g47e6qesqaa/wechat4j.pdf</a><br>
 
-																					目前开发的WeChat4j是运行在百度的BAE上的，所以建立的WeChat4j项目中包含了BAE
-																					Java Project的libs，当然，<br>
-																						你完全可以建立一个J2EE项目，然后复制SDK即可使用了。<br>
-																							我已经使用自己的公众账号“学生在清华”测试过了，想要测试的可以直接加公众账号“学生在清华”，或者自己创建<br>
-																								一个公众账号使用如下配置<br> URL: <a
-																									href="http://wechat4j.duapp.com">http://wechat4j.duapp.com</a>
-																									Token: WeChat4j <br><br> <img
-																											src="images/ppt01.png" width="320px"
-																											height="240px" style="display: inline;">
+								目前开发的WeChat4j是运行在百度的BAE上的，所以建立的WeChat4j项目中包含了BAE Java
+								Project的libs，当然，<br> 你完全可以建立一个J2EE项目，然后复制SDK即可使用了。<br>
+								我已经使用自己的公众账号“学生在清华”测试过了，想要测试的可以直接加公众账号“学生在清华”，或者自己创建<br>
+								一个公众账号使用如下配置<br> URL: <a href="http://wechat4j.duapp.com">http://wechat4j.duapp.com</a>
+								Token: WeChat4j <br> <br> <img src="images/ppt01.png"
+									width="320px" height="240px" style="display: inline;"> <img
+									src="images/ppt28.png" width="320px" height="240px"
+									style="display: inline;"><br>
+								<p style="float: clear-both;">
+									感兴趣的请关注“学生在清华”，功能虽然还不多，但是我会根据需求逐渐添加的，欢迎加关注！<br>
 
-																												<img src="images/ppt28.png" width="320px"
-																												height="240px" style="display: inline;"><br>
-																														<p style="float: clear-both;">
-																															感兴趣的请关注“学生在清华”，功能虽然还不多，但是我会根据需求逐渐添加的，欢迎加关注！<br>
-
-																																一切校园精彩，尽在“学生在清华”，博客地址：<a
-																																href="http://studentstsinghua.diandian.com">http://studentstsinghua.diandian.com
-																															</a><br>
-																														</p>
+									一切校园精彩，尽在“学生在清华”，博客地址：<a
+										href="http://studentstsinghua.diandian.com">http://studentstsinghua.diandian.com
+									</a><br>
+								</p>
 							</p>
 						</div>
 					</div>
@@ -154,7 +148,8 @@
 					<div style="clear: both;">&nbsp;</div>
 					<div id="footer">
 						<p>
-							(c) 2013 <a href="http://hujiaweiyinger.diandian.com">http://hujiaweiyinger.diandian.com.</a>
+							(c) 2013 <a href="http://hujiaweiyinger.diandian.com">http://hujiaweiyinger.diandian.com.</a></br>
+							</br>
 						</p>
 					</div>
 					<!-- end #footer -->

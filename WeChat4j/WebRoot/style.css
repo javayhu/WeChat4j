@@ -19,7 +19,7 @@ body {
 
 h1, h2, h3 {
 	margin: 0px;
-	text-transform: lowercase;
+	/*text-transform: lowercase;*/
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	color: #FFFFFF;
@@ -179,7 +179,7 @@ html>body #wrapper, html>body #bg1, html>body #bg2 {
 
 #logo h1 {
 	padding: 100px 0px 15px 0px;
-	text-transform: lowercase;
+	/*text-transform: lowercase;*/
 }
 
 #logo a {
