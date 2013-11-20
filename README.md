@@ -1,5 +1,7 @@
 WeChat4j
 ========
+[注，随着Tencent 微信平台的API变更，我已经不确定这份代码是否还可以用了，我已经不更新了，所以不用给我发邮件问我如何解决了]
+[如果有谁愿意继续将其共享下去，欢迎联系我<hujiawei090807@gmail.com>，帮我继续共享下去，谢谢]
 
 An Open Source Java SDK for WeChat Open Platform
 
@@ -29,4 +31,4 @@ URL: http://wechat4j.duapp.com         Token: WeChat4j
 
 作者：胡家威<br>
 邮箱地址：yinger090807@qq.com    <br>
-博客地址：http://hujiaweiyinger.diandian.com <br>
+博客地址：http://hujiaweibujidao.github.io <br>
