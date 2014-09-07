@@ -30,5 +30,5 @@ https://www.dropbox.com/s/sf73g47e6qesqaa/wechat4j.pdf
 URL: http://wechat4j.duapp.com         Token: WeChat4j
 
 作者：胡家威<br>
-邮箱地址：yinger090807@qq.com    <br>
+邮箱地址：hujiawei090807@gmail.com    <br>
 博客地址：http://hujiaweibujidao.github.io <br>
