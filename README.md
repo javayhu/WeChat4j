@@ -3,8 +3,6 @@ WeChat4j
 
 **[随着微信平台的API变更，这份代码已经不能使用了，我也已经不更新了，所以不用给我发邮件问我如何解决了]**
 
-**[如果有谁愿意继续将其共享下去，欢迎联系我<hujiawei090807@gmail.com>，帮我继续共享下去，谢谢]**
-
 An Open Source Java SDK for WeChat Open Platform
 
 WeChat4j 是为腾讯微信公众平台制作的一个Java版本的SDK，旨在快速建立开发模式的微信公众账号。<br>
